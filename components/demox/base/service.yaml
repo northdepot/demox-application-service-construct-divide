@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: demox
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: demox
+    app.kubernetes.io/part-of: demox
+  name: demox
+  namespace: application-service
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: demox
+status:
+  loadBalancer: {}
